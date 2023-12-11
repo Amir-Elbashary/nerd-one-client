@@ -1,24 +1,26 @@
-# README
+### Installation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In order to run the provider you need to make sure `ruby 2.6.5` is installed, it's already set on `.ruby-version` file
 
-Things you may want to cover:
+Then run `bundle install`
 
-* Ruby version
+If any errors occured, just make sure you sure `gem install bundler -v 1.17.2` just in case
 
-* System dependencies
+Run `bundle exec rails db:create` and `bundle exec rails db:migrate`
 
-* Configuration
+Then server can no be normaly started using `bundle exec rails s -p 3001`
 
-* Database creation
+### Configs
+You can use database.yml.exmaple as a template after setting up the .env variables that works with your system (.env.example also shows the required DB variables to set)
 
-* Database initialization
+### Signing In
+Navigate to `http://localhost:3001` to signin/signup
 
-* How to run the test suite
+### Client .env variable
+makes sure you source the .env file using `source .env`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+export OAUTH_PROVIDER_URL=http://localhost:3000
+export CLIENT_ID=p8ZiY9roOme9ko0dSLiFE1DVpb13aGlI6Ni9gXH7Gck
+export CLIENT_SECRET=S8PtFjzXLX3CIhbTvohJ5WpHWVBfLEJou34LXcDwe9s
+export OAUTH_REDIRECT_URI=http://localhost:3001/oauth/callback
+export CLIENT_TWO_URL=http://localhost:3002 (If you have more clients)
