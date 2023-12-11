@@ -1,0 +1,7 @@
+<h1>Client ONE</h1>
+  <% if session[:access_token] %>
+    <p>You are log in as <%= @owner['email']%></p>
+    <p><%= link_to 'Client-Two', ENV['CLIENT_TWO_URL'] %></p>
+  <% else %>
+    <%= link_to 'Login', ENV['OAUTH_PROVIDER_URL'] %>
+<% end %>
